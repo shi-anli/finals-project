@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+  <body style="background: linear-gradient(rgba(50, 90, 150, 1), rgba(20, 0, 30, 1)) fixed;">
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/"><h5>Home</h5></a>
+          <a class="navbar-brand" href="/about"><h5>About us</h5></a>
+          <a class="navbar-brand" href="/howtohelp"><h5>How you can help</h5></a>
+          <a class="navbar-brand" href="/stories"><h5>Stories</h5></a>
+        </nav>
+    </header>
+
+    <div class="color-container" style='float: center;
+    width: 100%; height: auto; margin: 0px; margin-left: auto; margin-right:
+    auto; border: 0px solid rgba(0, 0, 0, .2); border-radius: 5px'>
+    <div align="center">
+    <div id="content">
+        <div class="contentwrap">
+            <div class="itemwrap"><br>
+            {% block content %}
+            {% endblock %}
+                {% for item in posts %}
+                <img src="{{ item.media }}" class="card-img-top" alt="">
+                <div class="jumbotron jumbotron-fluid" style="background: #FFFFFFAA">
+                  <div class="container">
+                    <h1 class="display-4">{{ item.title }}</h1>
+                    <p class="lead">{{ item.text }}</p>
+                  </div>
+                </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </body>
+</html>

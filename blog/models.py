@@ -6,6 +6,8 @@ from django.utils import timezone
 class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
+    page = models.IntegerField()
+    media = models.TextField(default=None, blank=True, null=True)
 
     def __str__(self):
         return self.title
