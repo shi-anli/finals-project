@@ -15,4 +15,8 @@ def algorithm(request):
 
 
 def stories(request):
-    return render(request, 'page.html', {'posts': Post.objects.filter(page=4), 'title': "Beggars' previous lives"})
+    return render(request, 'page.html', {'posts': Post.objects.filter(page=4), 'title': "Beggars' lives"})
+
+
+def faq(request):
+    return render(request, 'page.html', {'posts': Post.objects.filter(page=5), 'title': "Questions & Answers"})
